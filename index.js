@@ -14,7 +14,12 @@ function fecthApi() {
     fetch(url)
     .then((respose) => respose.json())
     .then((data) => {
-        const { name, id } = data
-        console.log(name, id)
+        const { name, id, sprites } = data
+        createPokemon(sprites)
     })
+
+    function createPokemon(sprites) {
+        console.log(sprites.other.dream_world)
+        const root = document.createElement('img')
+    }
 }
