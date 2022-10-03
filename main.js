@@ -1,22 +1,20 @@
+const button = document.querySelector('button')
+
+button.addEventListener('click', (event) => {
+    event.preventDefault()
+    fecthApi()
+})
+
 const pokemon = document.querySelector('input')
 
-
 function fecthApi() {
-    let id = Number(pokemon.value)
-    
-    console.log(id)
+    const id = pokemon.value
     const url = `https://pokeapi.co/api/v2/pokemon/${id}/`
 
     fetch(url)
-    .then((resp) => resp.json())
+    .then((respose) => respose.json())
     .then((data) => {
         const { name, id } = data
         console.log(name, id)
     })
 }
-
-const a = [1, 3, 4, 5]
-
-a.map((item) => {
-    console.log(item)
-})
